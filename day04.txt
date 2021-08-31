@@ -6,7 +6,9 @@
 - 메뉴 - FILE - Setting - Version Control - GitHub
     + 버튼 후 계정 추가
 
-- vcs - Create Git repository
+- vcs - Create Git repository (상단메뉴)
+
+- Git - GitHub - Share Project on GitHub
 
 
 https://github.com/dangils/springboard.git
