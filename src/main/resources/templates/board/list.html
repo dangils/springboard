@@ -1,0 +1,41 @@
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트</title>
+</head>
+<body>
+<div th:insert="include/header.html" id="header"></div>
+<h2>리스트</h2>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>조회수</th>
+        <th>날짜</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${boardList}">  <!-- 라인 한개씩 board에 저장  -->
+        <!--  model.addAttribute("boardList", boardList); 키값을 받아와 한줄 씩 돌면서 시행-->
+        <td><span th:text="${board.id}"></span></td>
+
+        <td>
+            <a th:href="@{'/detail/'+${board.id}}">
+                <span th:text="${board.title}"></span>
+            </a>
+        </td>
+        <td><span th:text="${board.writer}"></span></td>
+        <td><span th:text="${board.hit}"></span></td>
+        <td><span th:text="${board.regdate}"></span></td>
+    </tr>
+    </tbody>
+</table>
+        <!-- @ : 상대경로를 통해 접근, 콘트롤러에서 찾음(겟 방식으로 찾음)-->
+<a th:href="@{/write}">글쓰기</a> <!-- http://127.0.0.1:9090/write (절대경로)-->
+<div th:insert="include/footer.html" id="footer"></div>
+</body>
+</html>

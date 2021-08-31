@@ -1,0 +1,39 @@
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>리스트</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <script>
+        $(function(){
+           axios.get('/api/list',{
+
+            }).then(function (response){
+                // console.log(response);
+                for(let i in response.data){
+                    let $id = response.data[i].id;
+                    let $title = response.data[i].title;
+                    let $writer = response.data[i].writer;
+                    let $hit = response.data[i].hit;
+                    let $regdate = response.data[i].regdate;
+
+                    let row = $('<tr>').append(
+                        '<td>'+ $id +'</td>' +
+                        '<td>'+ $title +'</td>' +
+                        '<td>'+ $writer +'</td>' +
+                        '<td>'+ $hit +'</td>' +
+                        '<td>'+ $regdate +'</td></tr>'
+                    )
+                }
+           })
+        });
+
+    </script>
+<body>
+
+</body>
+</html>

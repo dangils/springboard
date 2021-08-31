@@ -6,13 +6,35 @@
 - 메뉴 - FILE - Setting - Version Control - GitHub
     + 버튼 후 계정 추가
 
-- vcs - Create Git repository
+- vcs - Create Git repository (상단메뉴)
+
+- Git - GitHub - Share Project on GitHub
 
 
 https://github.com/dangils/springboard.git
 
 
+AJAX, AXIOS, FETCH
 
+✔ AXIOS, FETCH는 AJAX의 라이브러리
+
+AXIOS
+
+axios({
+    url: '요청 URL',
+    method: '방식',
+    data: {
+        데이터(매개변수)
+    }
+});
+
+또는
+
+axios.get('요청URL',{
+    params:{
+        데이터(매개변수)
+    }
+});
 
 
 

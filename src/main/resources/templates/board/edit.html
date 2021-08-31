@@ -1,0 +1,21 @@
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>글수정</title>
+</head>
+<body>
+<div th:insert="include/header.html" id="header"></div>
+<h2>글수정</h2>
+<!-- http://127.0.0.1:9090/post-->
+<form th:action="@{'/post/edit/'+${boardDTO.id}}" method="post">
+    <p>제목 : <input type="text" name="title" th:value="${boardDTO.title}"></p>
+    <p>작성자 : <input type="text" name="writer" th:value="${boardDTO.writer}"></p>
+    <p><textarea name="content" cols="50" rows="4" th:text="${boardDTO.content}"></textarea></p>
+    <p><input type="submit" value="수정"></p>
+</form>
+
+<div th:insert="include/footer.html" id="footer"></div>
+</body>
+</html>
