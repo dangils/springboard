@@ -1,0 +1,18 @@
+인텔리제이 깃허브 연결하기
+- 메뉴 - FILE - Setting _ Version Control - Git
+    Path to Git Executable : C:\Program Files\Git\cmd\git.exe
+    ✔ test 버튼 클릭 후 버전이 뜨는지 확인
+
+- 메뉴 - FILE - Setting - Version Control - GitHub
+    + 버튼 후 계정 추가
+
+- vcs - Create Git repository
+
+
+https://github.com/dangils/springboard.git
+
+
+
+
+
+
