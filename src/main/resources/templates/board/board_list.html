@@ -14,6 +14,7 @@
 
             }).then(function (response){
                 // console.log(response);
+               let tb=$('<tbody>');
                 for(let i in response.data){
                     let $id = response.data[i].id;
                     let $title = response.data[i].title;
@@ -28,12 +29,30 @@
                         '<td>'+ $hit +'</td>' +
                         '<td>'+ $regdate +'</td></tr>'
                     )
+                    tb.append(row);  <!--tr을 담은 row를 tb에 넣음 -->
                 }
-           })
+                tb.append('</tbody>');
+               $('.thead').after(tb);
+           }).catch(function(err){
+               console.log(err);
+            })
         });
-
     </script>
-<body>
 
+
+
+<body>
+    <table class="board_list">
+        <thead class="thead">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>조회수</th>
+            <th>날짜</th>
+
+        </tr>
+        </thead>
+    </table>
 </body>
 </html>
